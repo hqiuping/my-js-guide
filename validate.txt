@@ -1,0 +1,35 @@
+身份证校验：
+	const validateIdCard = (rule, value, callback) => {
+			let reg = /^\d{6}(18|19|20)?\d{2}(0[1-9]|1[012])(0[1-9]|[12]\d|3[01])\d{3}(\d|[xX])$/;
+			// 加权因子
+			let factor = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ];
+			// 校验码
+            let parity = [ 1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2 ];
+            let code;
+            if (value) {
+                code = value.substring(17);
+                var sum = 0;
+                for(var i=0;i<17;i++) {
+                    sum += value[i]*factor[i];
+                }
+            }
+		 	if (value === '' || value === null ) {
+		     	callback(new Error('身份证号码不能为空'));
+			} else if (!reg.test(value) || parity[sum % 11] != code.toUpperCase()){
+			    callback(new Error('请输入正确的身份证号码'));
+			} else {
+			  	callback();
+			}
+        };
+		
+手机号码：
+	/^(((13[0-9]{1})|(14[0-9]{1})|(17[0-9]{1})|(15[0-3]{1})|(15[5-9]{1})|(18[0-9]{1}))+\d{8})$/
+
+纯数字：
+	/^[0-9]+.?[0-9]*$/
+
+英文+数字：
+	/^[A-Za-z0-9]+$/
+	
+其他常用校验：
+https://www.cnblogs.com/xuqiang7/p/11082729.html

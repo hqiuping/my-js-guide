@@ -1,0 +1,146 @@
+kEc9Eg
+
+vue项目初始化：vue init webpack xxx
+
+redis启动：redis-server.exe redis.windows.conf
+
+检查端口：netstat -ano
+
+svn url:https://192.168.200.8:9999/svn/java/
+
+myRepository:  https://DESKTOP-MQ82KQB/svn/myRepository
+
+git:  
+将本地新项目上传到git
+1、git add .
+2、git commit -m "first commit"
+3、git remote add origin https://github.com/yourname/helloworld.git
+4、git pull --rebase origin master
+5、git push -u origin master
+
+      git remote add origin http://192.168.60.14:3000/Team.Atelier/typp-fledgling-cits.git
+
+      git clone http://192.168.60.14:3000/dmucong/perception-log.git
+
+      git pull origin master // 拉取项目
+
+      //提交步骤
+      git pull origin master
+      git status
+      git add 文件
+      git commit -m "提交说明"
+      git push origin master 
+
+     // 创建分支并切换
+      git checkout -b dev = git branch dev 
+ 		         git checkout dev
+    // 获取远程分支
+    git fetch origin xxx
+    // 查看当前分支
+      git branch(列出所有分支，当前分支前有 *）
+    
+    //  合并dev到master分支
+     git checkout master
+     git merge dev
+  
+    // 删除分支
+     git branch -d dev
+     git push origin --delete dev(删除远程分支)
+
+// 冲突
+     // 手动解决冲突再合并
+
+     // 普通合并，可以看出合并历史
+     git merge -no-off  -m "******" dev
+ 
+     // 查看分支历史
+     git reflog
+
+     // 版本回退
+     git reset --hard HEAD@{X} 
+
+1 查看远程仓库地址：git remote show origin
+2 切换远程仓库地址：git remote set-url origin xxx(新的仓库地址)
+
+字体设置：font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+
+swagger：
+	字典查询：{
+	"searchMap": {
+	
+	},
+	"currentPage":1,
+	"pageSize":50
+}
+
+项目打包
+npm run clean
+npm run build
+easy zip
+
+查看包版本：npm view *** version
+项目部署：
+
+ps -aux,查看所有的进程
+kill XXXXX  结束进程
+nohup npm start 2>&1 &    进程在后台执行，就算退出了也不会结束
+
+redis: 把数据缓存在内存中，周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件，在此基础上实现了master-slave同步。
+
+1（md5加密）：c4ca4238a0b923820dcc509a6f75849b
+typp(md5)：d47bff9cfce8686c4101ac22538aa0bc
+
+170：root linewell@2016
+
+护眼颜色：#E3EDCD
+
+部署node到linux:
+1. 下载node最新版本 : 连接   https://nodejs.org/download/release/
+
+　wget  https://nodejs.org/download/release/v9.9.0/node-v9.9.0-linux-x64.tar.xz
+
+2. 解压
+
+　　tar -xf node-v9.9.0-linux-x64.tar.xz
+
+3. cd到bin目录 执行下面命令  【使用包里面的node运行npm模块安装n工具】
+
+　　./node npm install -g n
+
+4. 再通过n工具安装系统环境的node
+
+　　./n latest
+
+5.安装系统环境的n工具（先前是在压缩包里面的）
+
+　　npm install -g n
+
+6. 安装node最新版本
+
+　　n latest
+
+7. 安装node标准版本:
+
+　　n stable
+
+8. 完
+
+linux下解压分卷
+zip -s 0 ***.zip --out new***.zip 
+unzip new***.zip
+
+部署流程（不需要node modules时）
+0、cd /opt/node-apps （进入前端部署文件夹）
+1、cp -R zhga-pbd zhga-pbd-bak0823 （拷贝一份备份文件）
+2、cd zhga-pbd  （进入感知文件夹）
+3、 npm run stop （停止运行）
+4、 npm run clean （清除之前打包后的东西）
+5、 拷贝到zhga-pbd之后，unzip zhga-pbd-0823.zip （解压缩）
+6、 A （全覆盖）
+7、 npm run start　（启动）
+
+var width=window.innerWidth||Math.max(document.documentElement.clientWidth, document.body.clientWidth);
+
+在 Node 中通过 JavaScript 使用内存时只能使用部分内存（64位系统下约为1.4 GB，32位系统下约为0.7 GB），这就是我们编译项目时为什么会出现内存泄露了，因为前端项目如果非常的庞大，webpack 编译时就会占用很多的系统资源，如果超出了V8对 Node 默认的内存限制大小就会出现CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory JavaScript堆内存不足
+
+响应状态码304是用户本地记录一个时间戳，服务器记录一个时间戳，如果两个戳一致才会304，如果响应的状态码是304，才使用用户缓存的文件
