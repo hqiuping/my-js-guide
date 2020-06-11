@@ -84,6 +84,7 @@ easywebpack是基于webpack的前端工程化解决方案，带来了热更新�
 
 ### 超图
 [OpenLayers API](https://iclient.supermap.io/web/apis/openlayers.html)  
+[Openlayers API整理](https://www.cnblogs.com/suRimn/p/10814760.html)  
 [OpenLayers View详解](https://blog.csdn.net/qingyafan/article/details/45603415)  
 [SuperMap](https://iclient.supermap.io/libs/iclient8c/index.html)  
 
