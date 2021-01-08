@@ -144,3 +144,7 @@ var width=window.innerWidth||Math.max(document.documentElement.clientWidth, docu
 在 Node 中通过 JavaScript 使用内存时只能使用部分内存（64位系统下约为1.4 GB，32位系统下约为0.7 GB），这就是我们编译项目时为什么会出现内存泄露了，因为前端项目如果非常的庞大，webpack 编译时就会占用很多的系统资源，如果超出了V8对 Node 默认的内存限制大小就会出现CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory JavaScript堆内存不足
 
 响应状态码304是用户本地记录一个时间戳，服务器记录一个时间戳，如果两个戳一致才会304，如果响应的状态码是304，才使用用户缓存的文件
+
+WEB/HTTP(s)/SESSION工作原理，熟悉WEB安全如XSS
+CSS/CSS3/LESS/SASS
+前端单元测试技术，熟悉敏捷开发流程，有Scrum经验优先考虑
